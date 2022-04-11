@@ -1,0 +1,65 @@
+[
+	{
+		"fileNaame" :  "accounts.csv",
+		"collectionName" : "accounts",
+		"mapping" : [{
+			"csv" : "Name",
+			"db" : "name"
+		}, {
+			"csv" : "Account_Code",
+			"db" : "code"
+		}, {
+			"csv" : "NULL",
+			"db" : "balance"
+		}]
+	},
+	{
+		"fileNaame" :  "Company.csv",
+		"collectionName" : "company_info",
+		"mapping" : [{
+			"csv" : "Name",
+			"db" : "name"
+		}, {
+			"csv" : "Email",
+			"db" : "email"
+		}, {
+			"csv" : "Location",
+			"db" : "address"
+		}, {
+			"csv" : "NULL",
+			"db" : "type"
+		}]
+	},
+	{
+		"fileNaame" :  "journals.csv",
+		"collectionName" : "transactions",
+		"mapping" : [{
+			"csv" : "Id",
+			"db" : "ref"
+		}, {
+			"csv" : "Account_code",
+			"db" : "account_code"
+		}, {
+			"csv" : "Description",
+			"db" : "description"
+		}, {
+			"csv" : "NULL",
+			"db" : "type",
+			"default": "J"
+		}]
+	},
+	{
+		"fileNaame" :  "journals_lines.csv",
+		"collectionName" : "transactions_lines",
+		"mapping" : [{
+			"csv" : "Journal_id",
+			"db" : "transaction_ref"
+		}, {
+			"csv" : "Debit",
+			"db" : "debit"
+		}, {
+			"csv" : "Credit",
+			"db" : "credit"
+		}]
+	}
+]

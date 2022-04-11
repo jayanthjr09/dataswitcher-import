@@ -1,0 +1,30 @@
+version: "3.5"
+
+networks:
+  dsw-challenge: null
+
+volumes:
+  mongo-data: null
+
+services:
+  console:
+    container_name: dsw_challenge
+    build:
+      context: ./.docker
+    volumes:
+      - .:/var/task
+    networks:
+      - dsw-challenge
+
+  mongodb:
+    image: mongo:latest
+    container_name: dsw_challenge_mongodb
+    environment:
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - 27018:27017
+    networks:
+      - dsw-challenge
+    command: "mongod --logpath=/dev/null"

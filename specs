@@ -1,0 +1,23 @@
+Specs for target collections
+
+[accounts]
+name (string) - name of account
+code (string) - code of the account
+balance (float) - current balance of account
+
+[company_info]
+name (string) - name of company
+email (string) - email of company contact
+address (string) - location of company
+type (string) - type of data company uses
+
+[transactions]
+ref (int) - unique id for transaction or journal
+account_code (string) - accounts:code
+description (string) - description of transaction
+type (enum:J,I) - type of transaction (J - journal, I - invoice)
+
+[transactions_lines]
+transaction_ref (int) - transactions:ref
+debit (float) - debit amount for line
+credit (float) - credit amount for line
